@@ -13,64 +13,63 @@ const Career = () => {
             <div className="career-dot"></div>
           </div>
 
-          {/* Item 1: Crypto Trading */}
+          {/* Item 1: Co-Founder CloseIQ */}
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Crypto Strategist</h4>
-                <h5>Self-Employed | Futures Trading</h5>
+                <h4>Co-Founder</h4>
+                <h5>CloseIQ - A Favela Initiative</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>2026–Present</h3>
             </div>
             <p>
-              Specializing in **Crypto Futures Trading**, focusing on high-frequency Scalping and Day Trading. 
-              Utilizing advanced technical analysis and risk management strategies on platforms like Binance and MEXC.
+              Focused on making data analytics and meaningful insights accessible to SMBs, 
+              helping them make smarter data-driven decisions.
             </p>
           </div>
 
-          {/* Item 2: AI & Automation */}
+          {/* Item 2: Co-Founder GradNet */}
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>AI Prompt Engineer</h4>
-                <h5>Automation & LLM Development</h5>
+                <h4>Co-Founder</h4>
+                <h5>GradNet</h5>
               </div>
-              <h3>2025–26</h3>
+              <h3>2025 July–2026 January</h3>
             </div>
             <p>
-              Developing specialized **AI Agents** and custom prompts. Building automation 
-              workflows for content creation and trading signal bots using Python and Google AI Studio.
+              Built GradNet, a social discovery platform built exclusively for college students. 
+              Enables spontaneous, real-time conversations through random matching.
             </p>
           </div>
 
-          {/* Item 3: Digital Marketing */}
+          {/* Item 3: Co-ordinator */}
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Digital Marketer</h4>
-                <h5>JDC Certified | SEO Specialist</h5>
+                <h4>Co-ordinator</h4>
+                <h5>Algonauts-Newton School</h5>
               </div>
-              <h3>2024–25</h3>
+              <h3>2024 November–2025 April</h3>
             </div>
             <p>
-              Certified from **JDC Free IT City**. Implementing SEO strategies and 
-              Meta Ads campaigns to scale online brands and improve search visibility 
-              through data-driven marketing.
+              Conducted regular Data Structures & Algorithms + Competitive Programming lectures 
+              for club members. Mentored peers on algorithmic problem-solving.
             </p>
           </div>
 
-          {/* Item 4: Global Leadership & Education */}
+          {/* Item 4: Student Intern */}
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>IRO Student Ambassador</h4>
-                <h5>Global Finalist | Top 20%</h5>
+                <h4>Student Intern</h4>
+                <h5>Mindler</h5>
               </div>
-              <h3>2023–26</h3>
+              <h3>2023 October–2023 December</h3>
             </div>
             <p>
-              Selected as a finalist in the **International Research Olympiad (IRO)**, ranking in the **Top 20% globally**. 
-              Currently pursuing ICS at Punjab College with **6+ professional certifications** in Python, Web Dev, and Cyber Security.
+              Analyzed and cleaned datasets using Excel, Pandas, and NumPy to support Rotary 
+              International initiatives. Performed data manipulation to extract actionable insights.
             </p>
           </div>
         </div>

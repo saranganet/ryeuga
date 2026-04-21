@@ -12,33 +12,31 @@ const Landing = ({ children }: PropsWithChildren) => {
           <div className="landing-intro">
             <h2>Hello! I'm</h2>
             <h1>
-              UMAIR
-              <br />
-              <span>GHAFFAR</span>
+              Ryeuga
             </h1>
           </div>
-          
-          <div 
-            className="landing-info" 
-            style={{ 
-              opacity: isLoading ? 0 : 1, 
-              transition: "opacity 0.2s ease-in" 
+
+          <div
+            className="landing-info"
+            style={{
+              opacity: isLoading ? 0 : 1,
+              transition: "opacity 0.2s ease-in"
             }}
           >
-            <h3>Tech Entrepreneur &</h3>
-            
+            <h3>Co-Founder CloseIQ &</h3>
+
             {/* Pehla block */}
             <h2 className="landing-info-h2">
-              <div className="landing-h2-1">Strategy</div>
-              <div className="landing-h2-2">Automation</div>
+              <div className="landing-h2-1">A Favela</div>
+              <div className="landing-h2-2">Initiative</div>
             </h2>
-            
+
             {/* YAHAN FIX LAGAYA HAI: Margin Top de kar isko neechay push kiya hai */}
-            <h2 style={{ marginTop: "70px" }}>
-              <div className="landing-h2-info">Crypto Strategist & AI Expert</div>
-              <div className="landing-h2-info-1">IRO Global Finalist | Top 20%</div>
+            <h2 style={{ marginTop: "100px" }}>
+              <div className="landing-h2-info">Innovator & Problem Solver</div>
+              <div className="landing-h2-info-1">Newton School of Technology Alum</div>
             </h2>
-            
+
           </div>
         </div>
         {children}

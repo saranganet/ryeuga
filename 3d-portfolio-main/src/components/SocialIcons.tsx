@@ -2,7 +2,7 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedinIn,
-  FaTelegram,
+  FaXTwitter,
 } from "react-icons/fa6";
 import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
@@ -61,7 +61,7 @@ const SocialIcons = () => {
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
           <a
-            href="https://github.com/umairghaffar759"
+            href="https://github.com/saranganet"
             target="_blank"
             rel="noreferrer"
           >
@@ -70,7 +70,7 @@ const SocialIcons = () => {
         </span>
         <span>
           <a
-            href="https://www.linkedin.com/in/umairghaffar759/"
+            href="https://www.linkedin.com/in/soham-saranga-895418237/"
             target="_blank"
             rel="noreferrer"
           >
@@ -79,16 +79,16 @@ const SocialIcons = () => {
         </span>
         <span>
           <a
-            href="https://t.me/umairghaffar759"
+            href="https://x.com/home"
             target="_blank"
             rel="noreferrer"
           >
-            <FaTelegram />
+            <FaXTwitter />
           </a>
         </span>
         <span>
           <a
-            href="https://www.instagram.com/umairghaffar759/"
+            href="https://www.instagram.com/ryeuga/"
             target="_blank"
             rel="noreferrer"
           >

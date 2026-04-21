@@ -5,45 +5,24 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const projects = [
   {
-    title: "Digital Marketing Certified",
-    category: "JDC Free IT City",
-    tools: "SEO, Meta Ads, Content Marketing, Brand Growth Strategies",
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=800",
+    title: "Fleet Prediction System",
+    category: "Machine Learning",
+    tools: "AI4I-2020-V2, Python, Pandas, Web Dashboard",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800",
     link: "#",
   },
   {
-    title: "AI & Prompt Engineering",
-    category: "Advanced AI Automation",
-    tools: "Google AI Studio, LLM Agents, Heygen, Grok, Image Generation",
+    title: "Whole Brain Emulation",
+    category: "Research",
+    tools: "Brain scanning, Neural simulation, Neurochemical modeling",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800",
     link: "#",
   },
   {
-    title: "Python & Bot Development",
-    category: "Software Automation",
-    tools: "Telegram Bots, Trading Signals, Automation Scripts, GitHub",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800",
-    link: "https://github.com/umairghaffar759",
-  },
-  {
-    title: "Academic Certifications",
-    category: "Punjab College Lahore",
-    tools: "6 Specialized Professional Courses, ICS Physics Background",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800",
-    link: "#",
-  },
-  {
-    title: "Global Research Leadership",
-    category: "IRO Student Ambassador",
-    tools: "International Research Olympiad Finalist, Strategic Communication",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800",
-    link: "#",
-  },
-  {
-    title: "Crypto Futures & Analysis",
-    category: "Professional Trading",
-    tools: "Technical Analysis, Risk Management, Scalping, Binance, MEXC",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800",
+    title: "GradNet",
+    category: "Full Stack Web App",
+    tools: "React, Node.js, Express, MongoDB, WebRTC, Socket.io",
+    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=800",
     link: "#",
   }
 ];
@@ -78,7 +57,7 @@ const Work = () => {
     <div className="work-section" id="work">
       <div className="work-container section-container">
         <h2>
-          Professional <span>Portfolio</span>
+          Projects
         </h2>
 
         <div className="carousel-wrapper">
@@ -141,9 +120,8 @@ const Work = () => {
             {projects.map((_, index) => (
               <button
                 key={index}
-                className={`carousel-dot ${
-                  index === currentIndex ? "carousel-dot-active" : ""
-                }`}
+                className={`carousel-dot ${index === currentIndex ? "carousel-dot-active" : ""
+                  }`}
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to project ${index + 1}`}
                 data-cursor="disable"

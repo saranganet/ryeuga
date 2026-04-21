@@ -39,26 +39,26 @@ const Navbar = () => {
       ScrollSmoother.refresh(true);
     });
   }, []);
-  
+
   return (
     <>
       <div className="header">
         {/* Aapka Logo: UG */}
         <a href="/#" className="navbar-title" data-cursor="disable">
-          UG
+          RYEUGA
         </a>
-        
+
         {/* Updated LinkedIn Profile Link */}
         <a
-          href="https://www.linkedin.com/in/umairghaffar759/" 
+          href="https://www.linkedin.com/in/soham-saranga-895418237/"
           className="navbar-connect"
           data-cursor="disable"
           target="_blank"
           rel="noreferrer"
         >
-          linkedin.com/in/umairghaffar759
+          linkedin.com/in/soham-saranga-895418237
         </a>
-        
+
         <ul>
           <li>
             <a data-href="#about" href="#about">

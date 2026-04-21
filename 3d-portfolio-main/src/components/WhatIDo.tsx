@@ -45,7 +45,7 @@ const WhatIDo = () => {
             </svg>
           </div>
 
-          {/* Box 1: Marketing & E-commerce */}
+          {/* Box 1: FULL STACK WEB */}
           <div className="what-content what-noTouch" ref={(el) => setRef(el, 0)}>
             <div className="what-border1">
               <svg height="100%">
@@ -55,26 +55,25 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>MARKETING & E-COMMERCE</h3>
-              <h4>Certified Growth Specialist</h4>
+              <h3>FULL STACK WEB</h3>
+              <h4>Scalable Applications</h4>
               <p>
-                JDC certified Digital Marketer. I specialize in scaling brands through 
-                Local SEO, Shopify Mastery, and Meta Ads strategies, helping businesses 
-                dominate their niche.
+                Building scalable web applications from scratch, deploying robust code, 
+                and ensuring secure communication systems using modern web frameworks.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">SEO & SEM</div>
-                <div className="what-tags">Shopify</div>
-                <div className="what-tags">Meta Ads</div>
-                <div className="what-tags">Ahrefs</div>
-                <div className="what-tags">E-comm</div>
+                <div className="what-tags">React</div>
+                <div className="what-tags">Node.js</div>
+                <div className="what-tags">Express.js</div>
+                <div className="what-tags">MongoDB</div>
+                <div className="what-tags">TypeScript</div>
               </div>
               <div className="what-arrow"></div>
             </div>
           </div>
 
-          {/* Box 2: AI & Python Automation */}
+          {/* Box 2: AI & AUTOMATION */}
           <div className="what-content what-noTouch" ref={(el) => setRef(el, 1)}>
             <div className="what-border1">
               <svg height="100%">
@@ -84,25 +83,24 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
             <div className="what-content-in">
               <h3>AI & AUTOMATION</h3>
-              <h4>Prompt Engineering & Dev</h4>
+              <h4>LLM Driven Workflows</h4>
               <p>
-                Building intelligent agents and automation bots. I use Python to create 
-                Telegram signal bots and leverage Prompt Engineering to automate high-quality 
-                content workflows.
+                Developing custom AI Agents, RAG pipelines, and automating workflows using 
+                modern integration tools and prominent LLM APIs.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
                 <div className="what-tags">Python</div>
-                <div className="what-tags">AI Agents</div>
-                <div className="what-tags">Prompt Design</div>
-                <div className="what-tags">Bots</div>
-                <div className="what-tags">GitHub</div>
+                <div className="what-tags">OpenAI API</div>
+                <div className="what-tags">Zapier</div>
+                <div className="what-tags">n8n</div>
+                <div className="what-tags">LLMs</div>
               </div>
               <div className="what-arrow"></div>
             </div>
           </div>
 
-          {/* Box 3: Crypto Trading */}
+          {/* Box 3: DATA ANALYTICS */}
           <div className="what-content what-noTouch" ref={(el) => setRef(el, 2)}>
             <div className="what-border1">
               <svg height="100%">
@@ -111,25 +109,24 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>CRYPTO TRADING</h3>
-              <h4>Futures & Technical Analysis</h4>
+              <h3>DATA ANALYTICS</h3>
+              <h4>Predictive Modeling</h4>
               <p>
-                Experienced in Crypto Futures (Scalping) on Binance and MEXC. I use 
-                advanced Technical Analysis and Risk Management to capitalize on 
-                short-term market movements.
+                Analyzing and cleaning datasets to support business initiatives, 
+                and extracting actionable insights using predictive models.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Futures</div>
-                <div className="what-tags">Scalping</div>
-                <div className="what-tags">TradingView</div>
-                <div className="what-tags">Risk Mgmt</div>
+                <div className="what-tags">Pandas</div>
+                <div className="what-tags">NumPy</div>
+                <div className="what-tags">Machine Learning</div>
+                <div className="what-tags">Excel</div>
               </div>
               <div className="what-arrow"></div>
             </div>
           </div>
 
-          {/* Box 4: Research & Security */}
+          {/* Box 4: PROBLEM SOLVING */}
           <div className="what-content what-noTouch" ref={(el) => setRef(el, 3)}>
             <div className="what-border1">
               <svg height="100%">
@@ -138,19 +135,18 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>RESEARCH & SECURITY</h3>
-              <h4>IRO Ambassador | Cyber Law</h4>
+              <h3>PROBLEM SOLVING</h3>
+              <h4>Algorithms & Architectures</h4>
               <p>
-                International Research Olympiad (IRO) Global Finalist (Top 20%). 
-                I also focus on Cyber Crime & Law, ensuring digital assets and 
-                workflows are secure and compliant.
+                Strong foundation in Data Structures and Algorithms with regular 
+                competitive programming practice on platforms like Codeforces and Leetcode.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">IRO Top 20%</div>
-                <div className="what-tags">Cyber Security</div>
-                <div className="what-tags">Research</div>
-                <div className="what-tags">Cyber Law</div>
+                <div className="what-tags">C++</div>
+                <div className="what-tags">Java</div>
+                <div className="what-tags">Data Structures</div>
+                <div className="what-tags">Algorithms</div>
               </div>
               <div className="what-arrow"></div>
             </div>

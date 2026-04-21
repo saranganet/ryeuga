@@ -33,25 +33,25 @@ const Scene = () => {
         antialias: true,
       });
       renderer.setSize(container.width, container.height);
-      
+
       // Performance Fix: Mobile par pixel ratio 2 se upar nahi jana chahiye warna lag karega
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      
+
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
       renderer.toneMappingExposure = 1;
       canvasDiv.current.appendChild(renderer.domElement);
 
       // --- RESPONSIVE CAMERA LOGIC ---
       const isMobile = window.innerWidth < 768;
-      
+
       // Mobile par wide view (32) aur desktop par narrow (14.5)
-      const fov = isMobile ? 32 : 14.5; 
+      const fov = isMobile ? 32 : 14.5;
       const camera = new THREE.PerspectiveCamera(fov, aspect, 0.1, 1000);
 
       if (isMobile) {
         // Mobile settings: Camera door (Z: 42) taake character frame mein fit aaye
-        camera.position.set(0, 11, 42); 
-        camera.zoom = 0.9; 
+        camera.position.set(0, 11, 42);
+        camera.zoom = 0.9;
       } else {
         // Laptop settings: Wahi jo pehle thi
         camera.position.set(0, 13.1, 24.7);
@@ -80,7 +80,7 @@ const Scene = () => {
           scene.add(character);
           headBone = character.getObjectByName("spine006") || null;
           screenLight = character.getObjectByName("screenlight") || null;
-          
+
           progress.loaded().then(() => {
             setTimeout(() => {
               light.turnOnLights();
@@ -119,7 +119,7 @@ const Scene = () => {
       };
 
       document.addEventListener("mousemove", onMouseMove);
-      
+
       const landingDiv = document.getElementById("landingDiv");
       if (landingDiv) {
         landingDiv.addEventListener("touchstart", onTouchStart as any);

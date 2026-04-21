@@ -6,24 +6,19 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          I am <strong>Umair Ghaffar</strong>, a high-performance Tech Professional and Entrepreneur 
-          based in Lahore. Currently pursuing my <strong>ICS studies at Punjab College</strong>, 
-          I have cultivated a diverse skill set that bridges the gap between technical execution 
-          and business strategy.
+          I am <strong>Soham Jayesh Saranga</strong>, a driven AI Product Manager 
+          based in Pune. Currently studying Computer Science at <strong>Newton School of Technology</strong>, 
+          I combine solid coding fundamentals with hands-on experimentation using LLMs and AI agents.
         </p>
         <p className="para">
-          My expertise lies in <strong>Crypto Futures Trading (Scalping & Day Trading)</strong>, 
-          <strong>SEO</strong>, and <strong>Digital Marketing</strong>. I am deeply invested 
-          in the future of automation, specializing in <strong>AI Prompt Engineering</strong> 
-          and building intelligent LLM-driven systems.
+          I focus on building tools and workflows that solve real user problems. I use tools like 
+          <strong> ChatGPT, Claude, Cursor, Zapier/Make, and n8n </strong> to prototype solutions 
+          rapidly, but I also write the core product logic when needed.
         </p>
         <p className="para">
-          Beyond technical skills, I am a <strong>Global Finalist (Top 20%)</strong> and 
-          <strong> Student Ambassador for the International Research Olympiad (IRO)</strong>. 
-          This international exposure, combined with <strong>6 Professional Certifications 
-          from Punjab College</strong> and a <strong>Digital Marketing certification from 
-          JDC Free IT City</strong>, allows me to approach problems with a research-oriented 
-          and data-driven mindset.
+          I document workflows and automation processes cleanly so they're reusable, scalable, and 
+          easy to improve over time. I am comfortable collaborating with cross-functional teams to 
+          understand user behavior, break down problems clearly, and deliver impactful solutions.
         </p>
       </div>
     </div>
