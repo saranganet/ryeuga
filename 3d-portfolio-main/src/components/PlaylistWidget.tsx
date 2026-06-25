@@ -5,10 +5,10 @@ import "./styles/PlaylistWidget.css";
 const playlists = [
   {
     id: 1,
-    title: "susu🫶🏻",
+    title: "NG",
     artist: "Playlist by Ryeuga",
-    cover: "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000da8463196b776a293c4098e5462e",
-    url: "https://open.spotify.com/playlist/4HT5684dn7LYuCpyuOmgG0"
+    cover: "https://mosaic.scdn.co/300/ab67616d00001e02274b406a7e18acebcf743079ab67616d00001e02a3b3f48ca81acacb3ad4ec8aab67616d00001e02dc55b97e9bb9f1c0addc6d57ab67616d00001e02ddd59d8bd5982e6d250d9a22",
+    url: "https://open.spotify.com/playlist/6VBLDAneIY1nMtH97wbhzZ"
   },
   {
     id: 2,
