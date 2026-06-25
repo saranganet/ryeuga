@@ -72,7 +72,7 @@ const navItems = [
 ];
 
 const Sidebar = ({ activeTab, setActiveTab }: SidebarProps) => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
