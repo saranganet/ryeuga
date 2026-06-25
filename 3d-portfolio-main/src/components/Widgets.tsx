@@ -53,19 +53,39 @@ export const SubscriptionWidget = () => {
         body: JSON.stringify({ email: email.trim() }),
       });
 
-      const data = await res.json();
-
-      if (res.ok) {
+      const contentType = res.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        const data = await res.json();
+        if (res.ok) {
+          setStatus("success");
+          setEmail("");
+        } else {
+          setStatus("error");
+          setMessage(data.error || "Subscription failed.");
+        }
+      } else {
+        // Non-JSON response returned. In local Vite dev mode, Vite proxies missing routes to index.html.
+        if (import.meta.env.DEV) {
+          console.warn("Dev Mode: /api/subscribe returned non-JSON. Simulating subscription success.");
+          await new Promise((resolve) => setTimeout(resolve, 600));
+          setStatus("success");
+          setEmail("");
+        } else {
+          setStatus("error");
+          setMessage("Invalid server response. Please try again.");
+        }
+      }
+    } catch (err) {
+      console.error(err);
+      if (import.meta.env.DEV) {
+        console.warn("Dev Mode: Fetch to /api/subscribe failed. Simulating subscription success.");
+        await new Promise((resolve) => setTimeout(resolve, 600));
         setStatus("success");
         setEmail("");
       } else {
         setStatus("error");
-        setMessage(data.error || "Subscription failed.");
+        setMessage("Network error. Try again.");
       }
-    } catch (err) {
-      console.error(err);
-      setStatus("error");
-      setMessage("Network error. Try again.");
     }
   };
 
