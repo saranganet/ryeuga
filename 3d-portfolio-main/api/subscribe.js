@@ -26,13 +26,16 @@ export default async function handler(request, response) {
     });
   }
 
-  if (!audienceId) {
-    if (process.env.VERCEL === "1") {
-      return response.status(500).json({ error: "RESEND_AUDIENCE_ID is not configured in your Vercel project settings." });
-    }
-  }
-
   try {
+    const requestBody = {
+      email: email,
+      unsubscribed: false
+    };
+
+    if (audienceId) {
+      requestBody.audienceId = audienceId;
+    }
+
     const res = await fetch("https://api.resend.com/contacts", {
       method: "POST",
       headers: {
@@ -40,11 +43,7 @@ export default async function handler(request, response) {
         "Content-Type": "application/json",
         "User-Agent": "ryeuga-portfolio/1.0"
       },
-      body: JSON.stringify({
-        email: email,
-        unsubscribed: false,
-        audienceId: audienceId
-      })
+      body: JSON.stringify(requestBody)
     });
 
     // Handle empty response bodies
