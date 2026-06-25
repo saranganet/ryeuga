@@ -5,7 +5,7 @@ const Landing = () => {
   return (
     <div className="landing-dash">
       <div className="landing-greeting">
-        Soham Saranga. Build fast. Move. Noise is secondary.
+        Soham Saranga. Privacy, Poker, Pasta.
       </div>
 
       <h1 className="landing-headline">
