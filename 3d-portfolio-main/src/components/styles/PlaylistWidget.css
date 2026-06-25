@@ -1,0 +1,112 @@
+.playlist-widget {
+  background: linear-gradient(to top, var(--bg-raised), color-mix(in srgb, var(--bg-raised) 30%, transparent));
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.playlist-header h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.track-item:hover { background: var(--bg-elevated); }
+
+.track-item.playing {
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  outline: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.track-art {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  object-fit: cover;
+  background: var(--bg-elevated);
+  flex-shrink: 0;
+}
+
+.track-info {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.track-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin: 0;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-artist {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 2px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Playing bars animation */
+.playing-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.bar {
+  width: 3px;
+  background: var(--accent);
+  border-radius: 1px;
+  animation: barBounce 0.8s ease-in-out infinite alternate;
+}
+
+.bar:nth-child(1) { animation-delay: 0s;    height: 100%; }
+.bar:nth-child(2) { animation-delay: 0.15s; height: 60%; }
+.bar:nth-child(3) { animation-delay: 0.3s;  height: 80%; }
+.bar:nth-child(4) { animation-delay: 0.1s;  height: 40%; }
+
+@keyframes barBounce {
+  from { transform: scaleY(0.3); }
+  to   { transform: scaleY(1); }
+}
+
+.track-play-btn {
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+
+.track-item:hover .track-play-btn { color: var(--text); }
+.track-item.playing .track-play-btn { color: var(--accent); }

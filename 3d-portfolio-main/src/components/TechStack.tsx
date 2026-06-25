@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { useRef, useMemo, useState, useEffect } from "react";
+import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import { EffectComposer, N8AO } from "@react-three/postprocessing";
@@ -35,7 +35,6 @@ const spheres = [...Array(42)].map(() => ({
 }));
 
 type SphereProps = {
-  vec?: THREE.Vector3;
   scale: number;
   r?: typeof THREE.MathUtils.randFloatSpread;
   material: THREE.MeshPhysicalMaterial;
@@ -43,46 +42,39 @@ type SphereProps = {
 };
 
 function SphereGeo({
-  vec = new THREE.Vector3(),
   scale,
   r = THREE.MathUtils.randFloatSpread,
   material,
   isActive,
 }: SphereProps) {
   const api = useRef<RapierRigidBody | null>(null);
+  const tempVec = useRef(new THREE.Vector3());
 
   useFrame((_state, delta) => {
-    if (!isActive) return;
+    if (!isActive || !api.current) return;
     delta = Math.min(0.1, delta);
-    const impulse = vec
-      .copy(api.current!.translation())
-      .normalize()
-      .multiply(
-        new THREE.Vector3(
-          -50 * delta * scale,
-          -150 * delta * scale,
-          -50 * delta * scale
-        )
-      );
+    const translation = api.current.translation();
+    const mass = api.current.mass();
 
-    api.current?.applyImpulse(impulse, true);
+    // Spring force towards center (0, 0, 0): F = -k * x
+    const k = 1.8;
+    const impulse = tempVec.current
+      .set(translation.x, translation.y, translation.z)
+      .multiplyScalar(-k * delta * mass);
+
+    api.current.applyImpulse(impulse, true);
   });
 
   return (
     <RigidBody
-      linearDamping={0.75}
-      angularDamping={0.15}
+      linearDamping={0.8}
+      angularDamping={0.5}
       friction={0.2}
-      position={[r(20), r(20) - 25, r(20) - 10]}
+      position={[r(12), r(12), r(10)]}
       ref={api}
       colliders={false}
     >
       <BallCollider args={[scale]} />
-      <CylinderCollider
-        rotation={[Math.PI / 2, 0, 0]}
-        position={[0, 0, 1.2 * scale]}
-        args={[0.15 * scale, 0.275 * scale]}
-      />
       <mesh
         castShadow
         receiveShadow
@@ -95,20 +87,18 @@ function SphereGeo({
   );
 }
 
-function Pointer({ vec = new THREE.Vector3(), isActive }: { vec?: THREE.Vector3; isActive: boolean }) {
+function Pointer({ isActive }: { isActive: boolean }) {
   const ref = useRef<RapierRigidBody>(null);
+  const targetVec = useRef(new THREE.Vector3());
 
   useFrame(({ pointer, viewport }) => {
     if (!isActive) return;
-    const targetVec = vec.lerp(
-      new THREE.Vector3(
-        (pointer.x * viewport.width) / 2,
-        (pointer.y * viewport.height) / 2,
-        0
-      ),
-      0.2
+    targetVec.current.set(
+      (pointer.x * viewport.width) / 2,
+      (pointer.y * viewport.height) / 2,
+      0
     );
-    ref.current?.setNextKinematicTranslation(targetVec);
+    ref.current?.setNextKinematicTranslation(targetVec.current);
   });
 
   return (
@@ -119,21 +109,8 @@ function Pointer({ vec = new THREE.Vector3(), isActive }: { vec?: THREE.Vector3;
 }
 
 const TechStack = () => {
-  const [isActive, setIsActive] = useState(false);
+  const isActive = true; // Always active in its own Projects tab
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const element = document.getElementById("career"); 
-      if (element) {
-        const threshold = element.getBoundingClientRect().top;
-        setIsActive(scrollY > threshold);
-      }
-    };
-    
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const materials = useMemo(() => {
     return textures.map(
@@ -151,9 +128,7 @@ const TechStack = () => {
   }, []);
 
   return (
-    <div className="techstack" id="techstack">
-      <h2>Professional Ecosystem</h2>
-
+    <div className="techstack" id="techstack" style={{ width: "100%", height: "100%", position: "relative" }}>
       <Canvas
         shadows
         gl={{ alpha: true, antialias: true }}

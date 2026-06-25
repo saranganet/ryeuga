@@ -1,186 +1,399 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap");
 
+/* =============================================
+   ROOT: dhravya.dev color system
+   Dark  = slate-900  (#0f172a)
+   Cards = slate-800  (#1e293b)
+   Bdr   = slate-700  (#334155)
+   Text  = slate-200  (#e2e8f0)
+   Muted = slate-400  (#94a3b8)
+   Active= sky-500    (#0ea5e9)
+   ============================================= */
 :root {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+  font-family: "Geist", "Inter", sans-serif;
   line-height: 1.5;
   scroll-behavior: smooth;
-  color-scheme: light dark;
-  color: #eae5ec;
-  background-color: var(--backgroundColor);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  --accentColor: #b026ff;
-  --backgroundColor: #05000a;
-  --vh: 100vh;
-  --vh: 100svh;
+
+  /* Dark theme (default) */
+  --bg:            #0f172a;     /* slate-900 */
+  --bg-raised:     #1e293b;     /* slate-800 */
+  --bg-elevated:   #263348;     /* slate-750 */
+  --border:        #1e293b;     /* slate-800 */
+  --border-subtle: #334155;     /* slate-700 */
+
+  --text:          #e2e8f0;     /* slate-200 */
+  --text-muted:    #94a3b8;     /* slate-400 */
+  --text-faint:    #64748b;     /* slate-500 */
+
+  --accent:        #0ea5e9;     /* sky-500 */
+  --accent-hover:  #0284c7;     /* sky-600 */
+  --accent-subtle: rgba(14,165,233,0.08);
+
+  /* Grid board specific */
+  --cell-bg:       #1A1D2A;
+  --cell-shadow:   #141721;
+
+  /* Sidebar */
+  --sidebar-w:     96px;
+
+  color: var(--text);
+  background: var(--bg);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Outfit", sans-serif;
+/* Light theme */
+[data-theme="light"] {
+  --bg:            #ffffff;
+  --bg-raised:     #f8fafc;     /* slate-50 */
+  --bg-elevated:   #f1f5f9;     /* slate-100 */
+  --border:        #e2e8f0;     /* slate-200 */
+  --border-subtle: #cbd5e1;     /* slate-300 */
+
+  --text:          #1e293b;     /* slate-800 */
+  --text-muted:    #64748b;     /* slate-500 */
+  --text-faint:    #94a3b8;     /* slate-400 */
+
+  --accent:        #0284c7;     /* sky-600 */
+  --accent-hover:  #0369a1;     /* sky-700 */
+  --accent-subtle: rgba(2,132,199,0.08);
+
+  --cell-bg:       #e2e8f0;
+  --cell-shadow:   #f1f5f9;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Geist", "Inter", sans-serif;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  letter-spacing: -0.011em;
+}
+
+/* Allow text selection in form fields */
+input, textarea {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* ==========================================
+   LAYOUT: sidebar + main 
+   ========================================== */
+.container-main {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+/* Main scrollable panel */
+.main-content-panel {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 24px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar */
+.main-content-panel::-webkit-scrollbar { width: 4px; }
+.main-content-panel::-webkit-scrollbar-track { background: transparent; }
+.main-content-panel::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 4px; }
+
+/* Two-column layout used on home tab */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  align-items: start;
+  max-width: 1072px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Card — matches dhravya.dev slate-800 cards */
+.glass-card {
+  background: linear-gradient(to top, var(--bg-raised), color-mix(in srgb, var(--bg-raised) 30%, transparent));
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  transition: border-color 0.2s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--border-subtle);
+}
+
+/* Tab view */
+.tab-view {
+  display: flex;
+  flex-direction: column;
+  max-width: 1072px;
+  margin: 0 auto;
+  width: 100%;
+  animation: fadeSlideUp 0.25s ease-out both;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Global header bar inside main */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 64px;
+  max-width: 1072px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Geist", "Inter", sans-serif;
+  color: var(--text);
 }
 
 a {
   color: inherit;
-  text-decoration: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
 }
+a:hover { color: var(--accent); }
 
-a:hover {
-  color: var(--accentColor);
-}
-
-main {
-  opacity: 1;
-  transition: 0.3s;
-}
-
-.main-active {
-  opacity: 0;
-  animation: fadeIn 1s 1;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fadeIn {
-  100% {
-    opacity: 1;
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media screen and (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 260px;
   }
 }
 
-/* ========================================= */
-/* BASE GLOBAL STYLES (UNIVERSAL)            */
-/* ========================================= */
-body {
-  margin: 0;
-  height: auto;
-  background-color: #000000;
-  flex-grow: 1;
-  --cWidth: calc(100% - 30px);
-  max-width: 100vw;
-  overflow-x: hidden;
+@media screen and (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.main-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+@media screen and (max-width: 768px) {
+  body { overflow-y: auto; }
+  .container-main { flex-direction: column; height: auto; overflow: visible; }
+  .main-content-panel { height: auto; overflow-y: visible; padding: 0 16px 120px; }
+  .tab-view { max-width: 100%; }
+  .main-header { max-width: 100%; }
 }
 
-.container-main {
+/* Achievements Section */
+.achievements-section, .latest-projects-section {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
-  margin: auto;
-  position: relative;
 }
 
-.container1 {
-  width: var(--cWidth);
-  height: var(--vh);
-  margin: auto;
-  position: relative;
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
 }
 
-.split-line,
-.split-h2 {
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.achievement-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: linear-gradient(to top, var(--bg-raised), color-mix(in srgb, var(--bg-raised) 40%, transparent));
+  transition: all 0.25s ease;
+}
+
+.achievement-card:nth-child(odd):hover {
+  border-color: var(--border-subtle);
+  transform: rotateZ(-1.2deg) translateY(-4px);
+}
+
+.achievement-card:nth-child(even):hover {
+  border-color: var(--border-subtle);
+  transform: rotateZ(1.2deg) translateY(-4px);
+}
+
+.achievement-img-wrap {
+  position: relative;
+  height: 160px;
+  width: 100%;
   overflow: hidden;
 }
 
-.split-h2 {
-  display: flex;
-  white-space: nowrap;
-  flex-wrap: nowrap;
-}
-
-.techstack {
+.achievement-img {
   width: 100%;
-  position: relative;
-  overflow: clip;
-  height: var(--vh);
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: -100px;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.techstack h2 {
-  font-size: clamp(40px, 6vw, 80px);
-  /* Fluid text size */
-  text-align: center;
+
+
+.achievement-badge {
   position: absolute;
-  width: 100%;
-  top: 120px;
-  left: 0;
-  font-weight: 400;
+  top: 12px;
+  left: 12px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.achievement-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.achievement-meta {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-faint);
   text-transform: uppercase;
 }
 
-/* ========================================= */
-/* 📱 SAFE MOBILE FIX (NO GSAP CONFLICTS)    */
-/* ========================================= */
-@media screen and (max-width: 768px) {
-
-  h1,
-  .landing-text h1 {
-    font-size: 11vw !important;
-    line-height: 1.1 !important;
-  }
-
-  h2,
-  h3,
-  .subtitle {
-    font-size: 6vw !important;
-  }
-
-  p,
-  .para {
-    font-size: 1rem !important;
-  }
-
-  /* Mobile par sections ki height normal karo */
-  section,
-  .section-container,
-  .what-i-do,
-  .career-section {
-    height: auto !important;
-    min-height: auto !important;
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
-  }
-
-  /* Mobile par har card ko alag line mein rakho */
-  .what-i-do-grid,
-  .grid-container,
-  .cards-container {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    width: 100% !important;
-  }
-
-  /* Canvas ko mobile par theek height do */
-  .canvas-container {
-    height: 50vh !important;
-    position: relative !important;
-  }
-
-  /* Mobile par text left par lock karne ki zaroorat nahi */
-  .landing-text,
-  .about-text,
-  .section-content {
-    max-width: 100% !important;
-  }
+.achievement-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
 }
 
-@media screen and (min-width: 768px) {
-  body {
-    --cWidth: 94%;
-  }
+.achievement-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Latest Projects Grid (dhravya.dev Style) */
+.projects-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.project-compact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: linear-gradient(to top, var(--bg-raised), color-mix(in srgb, var(--bg-raised) 40%, transparent));
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.project-compact-card:nth-child(odd):hover {
+  border-color: var(--border-subtle);
+  transform: rotateZ(-1deg) translateY(-2px);
+}
+
+.project-compact-card:nth-child(even):hover {
+  border-color: var(--border-subtle);
+  transform: rotateZ(1deg) translateY(-2px);
+}
+
+.project-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.project-compact-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.project-compact-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-compact-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.project-compact-arrow {
+  align-self: flex-end;
+  color: var(--text-faint);
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+  opacity: 0;
+  transform: translateX(-4px);
+}
+
+.project-compact-card:hover .project-compact-arrow {
+  color: var(--accent);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.projects-footer {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.projects-footer-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
 }

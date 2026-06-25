@@ -26,7 +26,7 @@
 .header ul li {
   margin-left: 0px;
   letter-spacing: 1px;
-  color: #ccc;
+  color: var(--textColorSecondary);
   font-weight: 600;
   cursor: pointer;
 }
@@ -55,7 +55,7 @@
     font-size: 14px;
   }
   .header ul li {
-    color: #eae5ec;
+    color: var(--textColor);
   }
   .navbar-title {
     font-size: 16px;
@@ -80,4 +80,24 @@
   .navbar-title {
     font-size: 18px;
   }
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin-top: -3px; /* Align vertically with text */
+}
+
+.theme-toggle-btn:hover {
+  color: var(--accentColor);
+  transform: rotate(15deg) scale(1.1);
 }

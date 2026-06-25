@@ -1,0 +1,162 @@
+/* ============================================
+   Sidebar — exact dhravya.dev style
+   96px wide, icon-only, right border
+   ============================================ */
+.sidebar {
+  width: var(--sidebar-w);
+  height: 100%;
+  background: transparent;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 50;
+  overflow-y: auto;
+}
+
+/* Top spacer (matches dhravya's hidden md:block flex-1) */
+.sidebar-spacer {
+  flex: 1;
+  min-height: 24px;
+}
+
+/* Nav links block (centered vertically) */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Each nav item */
+.nav-item {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  color: var(--text-faint);
+  transition: color 0.15s ease;
+  padding: 8px 0;
+}
+
+/* Active right-side bar indicator */
+.nav-item.active {
+  color: var(--accent);
+}
+
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
+}
+
+.nav-item:hover {
+  color: var(--text-muted);
+}
+
+.nav-item svg, .nav-icon {
+  width: 20px;
+  height: 20px;
+  transition: inherit;
+}
+
+/* Bottom controls: theme toggle */
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 8px 0;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-faint);
+  border-radius: 6px;
+  transition: color 0.15s ease, background 0.15s ease;
+  margin-bottom: 12px;
+}
+
+.theme-toggle:hover {
+  color: var(--text-muted);
+  background: var(--bg-raised);
+}
+
+.theme-toggle svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ============================================
+   MOBILE: bottom bar (≤768px)
+   ============================================ */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    flex-direction: row;
+    border-right: none;
+    border-top: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    z-index: 100;
+    padding: 0 8px;
+    overflow-y: visible;
+  }
+
+  .sidebar-spacer,
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    gap: 0;
+    flex: 1;
+  }
+
+  .nav-item {
+    height: 64px;
+    width: auto;
+    flex: 1;
+    border-radius: 0;
+  }
+
+  .nav-item.active::after {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+  }
+}

@@ -30,9 +30,9 @@ const WhatIDo = () => {
     <div className="whatIDO" id="what-i-do">
       <div className="what-box">
         <h2 className="title">
-          W<span className="hat-h2">HAT</span>
+          C<span className="hat-h2">APAB</span>
           <div>
-            I<span className="do-h2"> DO</span>
+            I<span className="do-h2"> LITIES</span>
           </div>
         </h2>
       </div>
@@ -40,26 +40,26 @@ const WhatIDo = () => {
         <div className="what-box-in">
           <div className="what-border2">
             <svg width="100%">
-              <line x1="0" y1="0" x2="0" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="7,7" />
-              <line x1="100%" y1="0" x2="100%" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="7,7" />
+              <line x1="0" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth="2" strokeDasharray="7,7" />
+              <line x1="100%" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="2" strokeDasharray="7,7" />
             </svg>
           </div>
 
-          {/* Box 1: FULL STACK WEB */}
+          {/* Box 1: INFRASTRUCTURE & SCALING */}
           <div className="what-content what-noTouch" ref={(el) => setRef(el, 0)}>
             <div className="what-border1">
               <svg height="100%">
-                <line x1="0" y1="0" x2="100%" y2="0" stroke="white" strokeWidth="2" strokeDasharray="6,6" />
-                <line x1="0" y1="100%" x2="100%" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="6,6" />
+                <line x1="0" y1="0" x2="100%" y2="0" stroke="currentColor" strokeWidth="2" strokeDasharray="6,6" />
+                <line x1="0" y1="100%" x2="100%" y2="100%" stroke="currentColor" strokeWidth="2" strokeDasharray="6,6" />
               </svg>
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>FULL STACK WEB</h3>
-              <h4>Scalable Applications</h4>
+              <h3>INFRASTRUCTURE & SCALING</h3>
+              <h4>High-Throughput Systems</h4>
               <p>
-                Building scalable web applications from scratch, deploying robust code, 
-                and ensuring secure communication systems using modern web frameworks.
+                Architecting solid web systems from bare metal, deploying zero-downtime microservices, 
+                and securing high-velocity communication nodes using modern cloud fabrics.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
@@ -73,20 +73,20 @@ const WhatIDo = () => {
             </div>
           </div>
 
-          {/* Box 2: AI & AUTOMATION */}
+          {/* Box 2: AI AGENTIC PIPELINES */}
           <div className="what-content what-noTouch" ref={(el) => setRef(el, 1)}>
             <div className="what-border1">
               <svg height="100%">
-                <line x1="0" y1="100%" x2="100%" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="6,6" />
+                <line x1="0" y1="100%" x2="100%" y2="100%" stroke="currentColor" strokeWidth="2" strokeDasharray="6,6" />
               </svg>
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>AI & AUTOMATION</h3>
-              <h4>LLM Driven Workflows</h4>
+              <h3>AI AGENTIC PIPELINES</h3>
+              <h4>Autonomous Execution</h4>
               <p>
-                Developing custom AI Agents, RAG pipelines, and automating workflows using 
-                modern integration tools and prominent LLM APIs.
+                Engineering custom multi-agent networks, high-precision vector RAG pipelines, 
+                and deprecating manual processes via autonomous LLM execution loops.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
@@ -100,20 +100,20 @@ const WhatIDo = () => {
             </div>
           </div>
 
-          {/* Box 3: DATA ANALYTICS */}
+          {/* Box 3: METRICS & PREDICTION */}
           <div className="what-content what-noTouch" ref={(el) => setRef(el, 2)}>
             <div className="what-border1">
               <svg height="100%">
-                <line x1="0" y1="100%" x2="100%" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="6,6" />
+                <line x1="0" y1="100%" x2="100%" y2="100%" stroke="currentColor" strokeWidth="2" strokeDasharray="6,6" />
               </svg>
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>DATA ANALYTICS</h3>
-              <h4>Predictive Modeling</h4>
+              <h3>METRICS & PREDICTION</h3>
+              <h4>Data Exploitation</h4>
               <p>
-                Analyzing and cleaning datasets to support business initiatives, 
-                and extracting actionable insights using predictive models.
+                Scraping, sanitizing, and converting unstructured data streams into pure business 
+                leverage. Implementing predictive models that forecast trend vectors.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
@@ -126,20 +126,20 @@ const WhatIDo = () => {
             </div>
           </div>
 
-          {/* Box 4: PROBLEM SOLVING */}
+          {/* Box 4: ALGORITHMIC EFFICIENCY */}
           <div className="what-content what-noTouch" ref={(el) => setRef(el, 3)}>
             <div className="what-border1">
               <svg height="100%">
-                <line x1="0" y1="100%" x2="100%" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="6,6" />
+                <line x1="0" y1="100%" x2="100%" y2="100%" stroke="currentColor" strokeWidth="2" strokeDasharray="6,6" />
               </svg>
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>PROBLEM SOLVING</h3>
-              <h4>Algorithms & Architectures</h4>
+              <h3>ALGORITHMIC EFFICIENCY</h3>
+              <h4>Low-Latency Solutions</h4>
               <p>
-                Strong foundation in Data Structures and Algorithms with regular 
-                competitive programming practice on platforms like Codeforces and Leetcode.
+                Optimizing memory footprints and execution speeds. Designing low-latency 
+                architectures with a deep foundation in complex data structures and raw algorithms.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">

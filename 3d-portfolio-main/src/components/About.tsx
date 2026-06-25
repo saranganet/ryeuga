@@ -4,21 +4,15 @@ const About = () => {
   return (
     <div className="about-section" id="about">
       <div className="about-me">
-        <h3 className="title">About Me</h3>
+        <h3 className="title">Core Thesis</h3>
         <p className="para">
-          I am <strong>Soham Jayesh Saranga</strong>, a driven AI Product Manager 
-          based in Pune. Currently studying Computer Science at <strong>Newton School of Technology</strong>, 
-          I combine solid coding fundamentals with hands-on experimentation using LLMs and AI agents.
+          I'm <strong>Soham Saranga</strong>. I engineer code, scale systems, and dismantle legacy structures. I do not do fluff. I do not negotiate with slow processes.
         </p>
         <p className="para">
-          I focus on building tools and workflows that solve real user problems. I use tools like 
-          <strong> ChatGPT, Claude, Cursor, Zapier/Make, and n8n </strong> to prototype solutions 
-          rapidly, but I also write the core product logic when needed.
+          My work spans high-velocity social networks, scalable synthetic fashion systems, and enterprise sales intelligence. Previously, I founded <strong>GradNet</strong> (concurrency video routing for college nodes) and <strong>Drapeify</strong> (generative diffusion models displacing legacy agencies). Currently, I'm building <strong>CloseIQ</strong> to convert audio conversations into structured market intelligence.
         </p>
         <p className="para">
-          I document workflows and automation processes cleanly so they're reusable, scalable, and 
-          easy to improve over time. I am comfortable collaborating with cross-functional teams to 
-          understand user behavior, break down problems clearly, and deliver impactful solutions.
+          Success is a metric of execution speed. I talk to users to extract raw demand signals, write code to fulfill them, and charge money immediately. I build at the frontier of <strong>AI, software, and infrastructure</strong>, focusing solely on systems that scale or solve painful inefficiencies. Privacy is a draft, code is the asset.
         </p>
       </div>
     </div>

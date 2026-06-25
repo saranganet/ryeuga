@@ -1,0 +1,142 @@
+.article-reader-container {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 0 60px;
+  animation: fadeSlideUp 0.3s ease-out both;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  margin-bottom: 32px;
+}
+
+.back-btn:hover {
+  color: var(--text);
+  border-color: var(--border-subtle);
+  background: var(--bg-raised);
+}
+
+.back-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.back-btn:hover svg {
+  transform: translateX(-4px);
+}
+
+.full-article {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.article-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 32px;
+}
+
+.article-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.article-category-badge {
+  color: var(--accent);
+  background: var(--accent-subtle);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.meta-separator {
+  color: var(--border-subtle);
+}
+
+.article-title {
+  font-size: clamp(2rem, 5.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin: 0;
+}
+
+.article-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 400;
+}
+
+.article-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.body-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 16px;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.body-paragraph {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.body-paragraph strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.article-not-found {
+  padding: 60px 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 640px) {
+  .article-title {
+    font-size: 1.75rem;
+  }
+  .article-subtitle {
+    font-size: 1rem;
+  }
+  .body-heading {
+    font-size: 1.2rem;
+  }
+  .body-paragraph {
+    font-size: 0.95rem;
+  }
+}
