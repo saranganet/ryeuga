@@ -14,12 +14,22 @@ export default async function handler(request, response) {
   const audienceId = process.env.RESEND_AUDIENCE_ID;
 
   if (!resendApiKey) {
-    // Simulated success for development / local testing
+    // If running in production on Vercel, this is a setup error
+    if (process.env.VERCEL === "1") {
+      return response.status(500).json({ error: "RESEND_API_KEY is not configured in your Vercel project settings." });
+    }
+    // Simulated success for local testing
     console.warn("RESEND_API_KEY is not configured. Simulating success.");
     return response.status(200).json({
       success: true,
       message: "Development Mode: API Key missing. Subscription simulated."
     });
+  }
+
+  if (!audienceId) {
+    if (process.env.VERCEL === "1") {
+      return response.status(500).json({ error: "RESEND_AUDIENCE_ID is not configured in your Vercel project settings." });
+    }
   }
 
   try {
