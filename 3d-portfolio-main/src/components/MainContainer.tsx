@@ -282,9 +282,9 @@ const MainContainer = (_: PropsWithChildren) => {
 
               {/* Right Column (Widgets) */}
               <aside style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-                <GuestbookWidget onNavigateToGuestbook={() => setActiveTab("guestbook")} />
-                <PlaylistWidget />
                 <SubscriptionWidget />
+                <PlaylistWidget />
+                <GuestbookWidget onNavigateToGuestbook={() => setActiveTab("guestbook")} />
                 <ContentWidget />
               </aside>
             </div>
